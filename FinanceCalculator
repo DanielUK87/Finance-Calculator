@@ -1,0 +1,39 @@
+using System;
+using System.Xml.Schema;
+
+namespace Finance_Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //use this utility to determine costs of living based on income
+            Console.WriteLine("Use this utility to determine your cost of living");
+            Console.Write("Press any key to continue");
+            Console.ReadLine();
+
+            Console.Write("What is your monthly income? ");
+            string income = Console.ReadLine();
+            int incom = Convert.ToInt32(income);
+            Console.Write("What is your monthly mortgage payment? ");
+            string mortgage = Console.ReadLine();
+            int mortg = Convert.ToInt32(mortgage);
+            Console.Write("What is the monthly cost of your Electricity / Gas? ");
+            string electricgas = Console.ReadLine();
+            int elecgas = Convert.ToInt32(electricgas);
+            Console.Write("What is the monthly food costs? ");
+            string foodcost = Console.ReadLine();
+            int food = Convert.ToInt32(foodcost);
+            Console.Write("Any other outgoing? eg. Netflix etc: ");
+            string othercosts = Console.ReadLine();
+            int otherCosts = Convert.ToInt32(othercosts);
+            int totalcosts = mortg + elecgas + food + otherCosts;
+            int livingCosts = incom - totalcosts;
+            Console.WriteLine($"Your monthly income of £{incom} plus your monthly outgoings of £{totalcosts} leaves you with £{livingCosts} left to work with!");
+
+
+       
+        }
+    }
+}
